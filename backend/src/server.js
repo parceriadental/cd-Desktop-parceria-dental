@@ -1,6 +1,14 @@
 const express = require('express');
 const cors = require('cors');
 const path = require('path');
+const db = require('./db/database');
+
+// Auto-seed if database is empty
+const userCount = db.prepare('SELECT COUNT(*) as count FROM users').get();
+if (userCount.count === 0) {
+  console.log('Empty database detected, running seed...');
+  require('./db/seed');
+}
 
 const authRoutes = require('./routes/auth');
 const atendimentosRoutes = require('./routes/atendimentos');
