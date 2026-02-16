@@ -1,0 +1,13 @@
+{
+  "name": "parceria-dental",
+  "version": "1.0.0",
+  "description": "Sistema de gestão de parceria odontológica",
+  "scripts": {
+    "install:frontend": "cd frontend && npm install",
+    "install:backend": "cd backend && npm install",
+    "build": "cd frontend && npm run build",
+    "seed": "cd backend && npm run seed",
+    "start": "cd backend && npm start",
+    "postinstall": "npm run install:frontend && npm run install:backend && npm run build"
+  }
+}
